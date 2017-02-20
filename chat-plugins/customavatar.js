@@ -1,5 +1,4 @@
 'use strict';
-/*eslint no-restricted-modules: [0]*/
 
 const fs = require('fs');
 const path = require('path');
@@ -46,8 +45,9 @@ exports.commands = {
 			const parts = target.split(',');
 
 			if (parts.length < 2) return this.parse('/help customavatar');
-
+			const userid = toId(target);
 			const name = toId(parts[0]);
+			if (Config.customavatars[name]) return this.errorReply("This user already has a custom avatar, Use `/customavatar delete {user}`");
 			let image_url = parts[1];
 			if (image_url.match(/^https?:\/\//i)) image_url = 'http://' + image_url;
 			const ext = path.extname(image_url);
