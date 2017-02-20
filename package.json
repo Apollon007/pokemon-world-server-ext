@@ -7,7 +7,10 @@
     "sockjs": "0.3.18",
         "md5": "*",
 	"request": "*",
-	"nef": "*"
+	"nef": "*",
+	"nef-fs": "*",
+	"dem-feels": "*",
+	"moment": "*"
   },
   "optionalDependencies": {
     "cloud-env": "0.1.1",
